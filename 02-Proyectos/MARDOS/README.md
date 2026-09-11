@@ -21,3 +21,8 @@ Sus criterios empresariales pueden informar análisis transversales, pero sus de
 ## Punto de partida
 
 Leer `Fuentes-originales/base_conocimiento  /00_indice.md`, y para decisiones de negocio, `01_empresa/03_prioridades_y_criterios_de_decision.md`.
+
+## Marcas propias
+
+- **THE SHOW MUST GO ON** — formato de experiencias enogastronómicas y musicales creado por Mardos. Ver [[Dossier — The Show Must Go On]]. Documentación original (41 documentos + dossier de Bodegas Cerdá) conservada en `Fuentes-originales/TSMGO/`.
+
