@@ -32,7 +32,7 @@ Cada edición debe mantener la esencia de la marca, con personalidad propia seg�
 
 ## 3. Identidad de marca
 
-**Estado: pendiente de desarrollo** (concepto creativo definitivo, tono verbal, sistema visual y manual de marca por definir).
+**Estado: en desarrollo — primer sistema visual aplicado (2026-09-15).** A partir del dossier comercial (ver §11) se ha definido y aplicado un primer sistema visual consistente: fondo oscuro (#0B0B0C) con acento naranja (#FFB238), tipografía Anton (titulares), Work Sans (cuerpo/etiquetas) y Alex Brush (cierre caligráfico, evolución tipográfica de firme a caligráfico), fotografía tratada con gradientes de color y saturación aumentada. Este sistema funciona como base de trabajo; **el manual de marca formal (construcción de logo, versiones y usos, co-branding) sigue pendiente de cierre.**
 
 Principios ya fijados como criterio de trabajo:
 
@@ -127,7 +127,11 @@ No hay cifras, acuerdos, resultados, asistentes, ventas ni rentabilidad document
 
 **Objetivo:** no debe limitarse a explicar un evento — debe vender un formato. Quien lo lea debe entender: qué es THE SHOW MUST GO ON, por qué es diferente, qué experiencia ofrece, qué aporta a una bodega, cómo puede participar El Corte Inglés, qué oportunidades hay para partners, cómo se produce, cómo se comercializa, qué posibilidades de adaptación y crecimiento tiene, y qué demuestra la primera edición de Bodegas Cerdá.
 
-**Piezas previstas (todas pendientes de desarrollo):** dossier maestro, dossier para bodegas, dossier para El Corte Inglés, dossier para partners, presentación comercial resumida para reuniones.
+**Dossier maestro — desarrollado (2026-09-15).** Primera versión completa del dossier comercial: 9 páginas (el concepto, la experiencia, atmósfera, reparto de responsabilidades, para quién es esto, producción, cierre) más una contraportada de marca intercalada tras cada página, en formato cuaderno listo para impresión a doble cara. Versión editable en vivo: [artifact del dossier](https://claude.ai/artifact/GeXTUR9Yy4YaSHZJVitiXE). PDF exportado adjunto en `adjuntos/TSMGO-dossier-comercial.pdf`.
+
+**Criterio de marca aplicado:** el dossier se ha planteado de forma genérica y adaptable a otras bodegas/espacios — sin referencias textuales o visuales a Bodegas Cerdá — con una única excepción documentada: la página "Para quién es esto" (sección de partners y colaboradores) muestra la foto original del photocall con los logos reales de partners, Bodegas Cerdá incluido, porque el propio contenido de esa sección trata de mostrar la integración de marcas partner. Decisión confirmada explícitamente por Ángel el 2026-09-15.
+
+**Piezas pendientes:** dossier para bodegas, dossier para El Corte Inglés, dossier para partners (versiones derivadas/recortadas del dossier maestro), presentación comercial resumida para reuniones.
 
 ## 12. Datos y ROI
 
@@ -146,21 +150,20 @@ Espacio abierto para ideas sin estructurar sobre bodegas, artistas, experiencias
 ## 14. Decisiones y tareas pendientes
 
 **Pendientes actuales (decisiones):**
-- Definir identidad visual.
-- Definir manual de marca.
+- Cerrar manual de marca formal (logo, versiones y usos, co-branding).
 - Definir modelo de colaboración con bodegas.
 - Diseñar propuesta para El Corte Inglés.
 - Diseñar ecosistema de partners.
-- Desarrollar dossier comercial.
+- Derivar versiones del dossier (bodegas, El Corte Inglés, partners, presentación resumida).
 
 **Tareas de prioridad inmediata:**
-- [ ] Desarrollar identidad visual.
-- [ ] Crear manual de marca.
+- [x] Desarrollar identidad visual (primer sistema visual, 2026-09-15 — ver §3).
+- [x] Desarrollar dossier maestro (2026-09-15 — ver §11).
+- [ ] Crear manual de marca formal.
 - [ ] Definir posicionamiento definitivo.
 - [ ] Estructurar propuesta para bodegas.
 - [ ] Diseñar modelo de colaboración con El Corte Inglés.
 - [ ] Definir estrategia de partners.
-- [ ] Desarrollar dossier maestro.
 
 ---
 
