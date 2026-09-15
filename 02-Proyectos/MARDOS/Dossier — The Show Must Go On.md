@@ -127,7 +127,12 @@ No hay cifras, acuerdos, resultados, asistentes, ventas ni rentabilidad document
 
 **Objetivo:** no debe limitarse a explicar un evento — debe vender un formato. Quien lo lea debe entender: qué es THE SHOW MUST GO ON, por qué es diferente, qué experiencia ofrece, qué aporta a una bodega, cómo puede participar El Corte Inglés, qué oportunidades hay para partners, cómo se produce, cómo se comercializa, qué posibilidades de adaptación y crecimiento tiene, y qué demuestra la primera edición de Bodegas Cerdá.
 
-**Dossier maestro — desarrollado (2026-09-15).** Primera versión completa del dossier comercial: 9 páginas (el concepto, la experiencia, atmósfera, reparto de responsabilidades, para quién es esto, producción, cierre) más una contraportada de marca intercalada tras cada página, en formato cuaderno listo para impresión a doble cara. Versión editable en vivo: [artifact del dossier](https://claude.ai/artifact/GeXTUR9Yy4YaSHZJVitiXE). PDF exportado adjunto en `adjuntos/TSMGO-dossier-comercial.pdf`.
+**Dossier maestro — desarrollado (2026-09-15), en dos formatos.** A partir de las mismas 9 páginas de contenido (el concepto, la experiencia, atmósfera, reparto de responsabilidades, para quién es esto, producción, cierre), existen dos versiones con propósitos distintos:
+
+- **Versión imprimible (cuaderno):** las 9 páginas con una contraportada de marca intercalada tras cada una, pensada para impresión a doble cara. PDF adjunto en `adjuntos/TSMGO-dossier-comercial.pdf`.
+- **Versión electrónica:** las mismas 9 páginas sin contraportadas (no aportan nada en pantalla) más una página añadida — "Ver vídeo" — situada justo después de la portada, con un botón grande enlazado de verdad (no solo visualmente) al vídeo de YouTube `https://youtu.be/AH6slOFo5NM`. PDF adjunto en `adjuntos/TSMGO-dossier-electronico.pdf`.
+
+Versión editable en vivo (refleja el layout electrónico: portada → ver vídeo → resto de páginas, sin contraportadas): [artifact del dossier](https://claude.ai/artifact/GeXTUR9Yy4YaSHZJVitiXE).
 
 **Criterio de marca aplicado:** el dossier se ha planteado de forma genérica y adaptable a otras bodegas/espacios — sin referencias textuales o visuales a Bodegas Cerdá — con una única excepción documentada: la página "Para quién es esto" (sección de partners y colaboradores) muestra la foto original del photocall con los logos reales de partners, Bodegas Cerdá incluido, porque el propio contenido de esa sección trata de mostrar la integración de marcas partner. Decisión confirmada explícitamente por Ángel el 2026-09-15.
 
