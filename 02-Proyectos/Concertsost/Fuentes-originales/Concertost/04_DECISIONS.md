@@ -37,11 +37,27 @@ A petición del cliente ("podemos actualizar todos los archivos?") se revisaron 
 - Los tres artifacts se republicaron para reflejar estos cambios en sus URLs ya existentes.
 
 ## Estado
-**Esta versión (v3) queda aprobada como base de trabajo, y ahora todos los entregables están en un estado consistente entre sí.** El cliente hará una versión definitiva más adelante — cuando se retome, revisar primero este documento y el artifact de la web antes de seguir iterando.
+**v3 (25/08/2026):** aprobada como base de trabajo, con placeholders claramente marcados para proyectos y partners.
+
+**v4 (15/09/2026):** la web incorpora ya vídeo de portada real, fotografía real en "Qué es", los 3 proyectos reales y los 6 logos de partners reales — ver detalle en la actualización de abajo. El botón "Hablemos" del nav, que había quedado ilegible por un bug de CSS, está corregido. Existe además un tema de WordPress instalable (cada sección como página independiente) como entregable adicional. Cuando se retome, revisar primero este documento y el artifact de la web antes de seguir iterando.
+
+## Actualización (15/09/2026) — vídeo de portada, contenido real y tema WordPress
+- **Nueva sección de vídeo a pantalla completa** como primer bloque de la home: vídeo del cliente (`VIDEO-WEB-.mp4`, original 1080p/67s/55MB) comprimido a ~12,7MB (720p, 25fps, sin audio) para que cargue rápido; capa oscura negro/verde encima para legibilidad; titular superpuesto "El punto de encuentro que mueve el ecosistema de eventos."; indicador de scroll animado. Respeta `prefers-reduced-motion` (pausa el vídeo).
+- **Hero de texto** (la sección que sigue al vídeo) actualizado: "De la idea a la alianza: bienvenido al ecosistema Concertsost."
+- **Contenido comercial real incorporado**, sustituyendo los placeholders mencionados antes en "Pendiente":
+  - "Qué es": foto de referencia sustituida por fotografía real de un concierto de Hombres G.
+  - "Proyectos": los 3 cuadros "[Nombre del proyecto] / Próximamente" sustituidos por SkyFest Benidorm (gestión y asesoramiento), Hombres G en Castellón (producción y gestión íntegra del concierto) y Vinal Fest (producción y gestión íntegra del festival), cada uno con foto real.
+  - "Ecosistema": los 6 bloques "Partner" sustituidos por los logotipos reales (en blanco) de Ayuntamiento de Castelló, Babalú, BCDME, SkyFest, Producciones Patos y un sexto logo (`LOGO2.png`, pendiente de confirmar el nombre del partner).
+- **Bug corregido**: el botón "Hablemos" del nav era ilegible (texto negro sobre su propio fondo negro) por un problema de especificidad CSS (`.nav-links a` pisaba el color blanco de `.nav-cta`). Corregido y alineado con lo ya decidido arriba: verde profundo `#236517` por defecto, hover a negro.
+- **Añadido enlace a Instagram** (icono en el nav + texto en el footer): https://www.instagram.com/concert.sost
+- Revisado con capturas en escritorio y móvil (incluyendo el menú móvil desplegado) tras los cambios.
+- Publicada en el mismo artifact ya existente: https://claude.ai/artifact/1T3pZt2hNKMJ3Bek1J7u1P
+- **Nuevo entregable**: tema de WordPress instalable (`concertsost-theme.zip`) donde cada sección (Qué es, Qué hacemos, Proyectos, Ecosistema, Contacto) es una página independiente con su propia plantilla; la portada combina el vídeo + el hero de texto. Al activar el tema se crean automáticamente las 5 páginas. Pendiente de instalar en un hosting real.
 
 ## Pendiente para la versión definitiva
 - Versión vectorial (SVG) de logotipo e isotipo — los archivos actuales son PNG de baja resolución (~534×145px).
-- Contenido comercial real: proyectos y partners.
+- Confirmar el nombre del partner correspondiente al logo `LOGO2.png` (ecosistema).
+- Instalar el tema de WordPress en el hosting definitivo de concertsost.com.
 - Cualquier ajuste adicional de diseño o estructura que el cliente pida en la siguiente vuelta.
 
 ## Assets previos (no usados como base)
