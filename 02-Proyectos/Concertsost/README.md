@@ -21,3 +21,10 @@ Concertsost es independiente de Sabor a Música. No reutilizar su identidad, tex
 ## Punto de partida
 
 Leer `Fuentes-originales/Concertost/00_MASTER.md` y después `04_DECISIONS.md` para conocer las decisiones vigentes.
+
+## Estado actual (15/09/2026)
+
+- Web (concertsost.com) publicada con el tema WordPress a una sola página; footer heredado del plugin Header Footer Elementor corregido.
+- Imagen destacada / Open Graph (redes sociales) generada con la línea visual de la marca y meta tags (og:*, twitter:*) añadidas al tema — verificado en vivo.
+- Firma de correo corporativa definida como plantilla base del equipo (logo a color, tipografía Segoe UI + Consolas para el cargo, aviso RGPD/LOPDGDD). Primer ejemplo: Pepe Delgado.
+- Entregables (tema WP en zip, imagen OG, firma HTML y guía de instalación en Outlook) en `Claude outputs/`.
