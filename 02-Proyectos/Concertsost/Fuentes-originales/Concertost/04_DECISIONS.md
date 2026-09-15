@@ -39,7 +39,7 @@ A petición del cliente ("podemos actualizar todos los archivos?") se revisaron 
 ## Estado
 **v3 (25/08/2026):** aprobada como base de trabajo, con placeholders claramente marcados para proyectos y partners.
 
-**v4 (15/09/2026):** la web incorpora ya vídeo de portada real, fotografía real en "Qué es", los 3 proyectos reales y los 6 logos de partners reales — ver detalle en la actualización de abajo. El botón "Hablemos" del nav, que había quedado ilegible por un bug de CSS, está corregido. Existe además un tema de WordPress instalable (cada sección como página independiente) como entregable adicional. Cuando se retome, revisar primero este documento y el artifact de la web antes de seguir iterando.
+**v4 (15/09/2026):** la web incorpora ya vídeo de portada real, fotografía real en "Qué es", los 3 proyectos reales y los 6 logos de partners reales — ver detalle en la actualización de abajo. El botón "Hablemos" del nav, que había quedado ilegible por un bug de CSS, está corregido. Existe además un tema de WordPress instalable, reconstruido como réplica fiel de una sola página (mismo scroll continuo y nav por anclas que la web real, sin páginas de WordPress separadas por sección — la primera versión, que sí las separaba, se descartó). Cuando se retome, revisar primero este documento y el artifact de la web antes de seguir iterando.
 
 ## Actualización (15/09/2026) — vídeo de portada, contenido real y tema WordPress
 - **Nueva sección de vídeo a pantalla completa** como primer bloque de la home: vídeo del cliente (`VIDEO-WEB-.mp4`, original 1080p/67s/55MB) comprimido a ~12,7MB (720p, 25fps, sin audio) para que cargue rápido; capa oscura negro/verde encima para legibilidad; titular superpuesto "El punto de encuentro que mueve el ecosistema de eventos."; indicador de scroll animado. Respeta `prefers-reduced-motion` (pausa el vídeo).
@@ -52,7 +52,7 @@ A petición del cliente ("podemos actualizar todos los archivos?") se revisaron 
 - **Añadido enlace a Instagram** (icono en el nav + texto en el footer): https://www.instagram.com/concert.sost
 - Revisado con capturas en escritorio y móvil (incluyendo el menú móvil desplegado) tras los cambios.
 - Publicada en el mismo artifact ya existente: https://claude.ai/artifact/1T3pZt2hNKMJ3Bek1J7u1P
-- **Nuevo entregable**: tema de WordPress instalable (`concertsost-theme.zip`) donde cada sección (Qué es, Qué hacemos, Proyectos, Ecosistema, Contacto) es una página independiente con su propia plantilla; la portada combina el vídeo + el hero de texto. Al activar el tema se crean automáticamente las 5 páginas. Pendiente de instalar en un hosting real.
+- **Nuevo entregable**: tema de WordPress instalable (`concertsost-theme.zip`), reconstruido como réplica fiel de una sola página tras detectar que la primera versión (cada sección como página independiente de WordPress) rompía el scroll continuo del diseño. La versión corregida usa un único `front-page.php` con todas las secciones en el mismo orden que la web real y navegación por anclas (`#que-es`, `#que-hacemos`, etc.), igual que el artifact publicado. Pendiente de instalar en un hosting real.
 
 ## Pendiente para la versión definitiva
 - Versión vectorial (SVG) de logotipo e isotipo — los archivos actuales son PNG de baja resolución (~534×145px).
