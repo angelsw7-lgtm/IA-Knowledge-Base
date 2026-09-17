@@ -1,0 +1,1095 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Vinal Fest</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Archivo:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap');
+
+  :root{
+    --sand:#F5E7D3;
+    --cream:#FBF3E6;
+    --ink:#271418;
+    --ink-soft:#6B4F49;
+    --wine:#5C1327;
+    --wine-deep:#3B0C1A;
+    --amber:#D9661E;
+    --amber-light:#F0A94E;
+    --gold:#E8A33D;
+    --sage:#7C8A5E;
+    --sage-strong:#5E6E45;
+    --sage-light:#E4E7D6;
+    --line:rgba(39,20,24,.14);
+    --shadow:0 18px 40px -22px rgba(59,12,26,.45);
+    --font-display:'Big Shoulders Display','Arial Narrow',sans-serif;
+    --font-body:'Archivo','Helvetica Neue',Arial,sans-serif;
+    --font-script:'Caveat','Segoe Script',cursive;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --sand:#1C1013;
+      --cream:#271519;
+      --ink:#F5E7D3;
+      --ink-soft:#C9A99C;
+      --wine:#F0A94E;
+      --wine-deep:#0F080A;
+      --amber:#E8792C;
+      --amber-light:#F0A94E;
+      --gold:#E8A33D;
+      --sage:#8FA070;
+      --sage-strong:#A9BC8A;
+      --sage-light:#2B3324;
+      --line:rgba(245,231,211,.14);
+      --shadow:0 18px 44px -20px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --sand:#1C1013;
+    --cream:#271519;
+    --ink:#F5E7D3;
+    --ink-soft:#C9A99C;
+    --wine:#F0A94E;
+    --wine-deep:#0F080A;
+    --amber:#E8792C;
+    --amber-light:#F0A94E;
+    --gold:#E8A33D;
+    --sage:#8FA070;
+    --sage-strong:#A9BC8A;
+    --sage-light:#2B3324;
+    --line:rgba(245,231,211,.14);
+    --shadow:0 18px 44px -20px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none !important; transition:none !important;} }
+
+  body{
+    margin:0;
+    background:var(--sand);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{max-width:100%;}
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding-inline:24px;}
+  section{padding-block:clamp(56px,9vw,120px);}
+
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:900;text-transform:uppercase;letter-spacing:.01em;text-wrap:balance;margin:0;line-height:.96;}
+  h1{font-size:clamp(2.9rem,3.6vw + 1.6rem,5.6rem);}
+  h2{font-size:clamp(2.1rem,2.2vw + 1.2rem,3.3rem);}
+  h3{font-size:clamp(1.3rem,.8vw + 1.05rem,1.65rem);}
+  p{margin:0;max-width:60ch;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:.5em;
+    font-family:var(--font-body);font-weight:700;font-size:.78rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--amber);
+    margin:0 0 14px;
+  }
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--amber);display:inline-block;border-radius:2px;}
+  .script{font-family:var(--font-script);font-weight:600;text-transform:none;letter-spacing:0;}
+
+  .icon{width:1em;height:1em;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position:sticky;top:0;z-index:40;
+    background:color-mix(in srgb, var(--sand) 86%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transform:translateY(0);
+  }
+  @media (prefers-reduced-motion: no-preference){
+    header.site{transition:transform .5s cubic-bezier(.22,.61,.36,1);}
+  }
+  header.site.is-hidden{transform:translateY(-100%);}
+  header.site:focus-within{transform:translateY(0) !important;}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:clamp(16px,3vw,32px);padding-block:10px;flex-wrap:wrap;}
+  .wordmark{display:inline-flex;align-items:baseline;gap:2px;font-family:var(--font-display);font-weight:900;font-size:1.55rem;letter-spacing:.01em;text-decoration:none;white-space:nowrap;}
+  .wordmark .v1{color:var(--amber);-webkit-text-stroke:1px var(--ink);text-stroke:1px var(--ink);}
+  .wordmark .v2{font-family:var(--font-script);font-weight:700;color:var(--wine);font-size:1.15rem;transform:rotate(-6deg) translateY(2px);margin-left:2px;}
+  .logo-mark{display:block;height:clamp(64px,8.8vw,84px);width:auto;object-fit:contain;}
+  .logo-mark--footer{height:clamp(84px,11vw,116px);filter:invert(1) brightness(1.06);}
+  nav.links{display:flex;gap:clamp(14px,2vw,28px);flex-wrap:wrap;font-weight:600;font-size:.92rem;}
+  nav.links a{text-decoration:none;position:relative;padding-block:4px;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--amber);transition:width .25s ease;}
+  nav.links a:hover::after,nav.links a:focus-visible::after{width:100%;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px;}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.55em;
+    font-family:var(--font-body);font-weight:700;font-size:.92rem;
+    padding:.85em 1.5em;border-radius:100px;text-decoration:none;
+    border:2px solid transparent;cursor:pointer;
+    will-change:transform;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .btn{transition:transform .22s cubic-bezier(.22,.61,.36,1), background-color .25s ease, border-color .25s ease, color .25s ease, box-shadow .25s ease;}
+  }
+  .btn:active{transform:scale(.95) !important;}
+  .btn-solid{background:var(--amber);color:#FBF3E6;box-shadow:var(--shadow);}
+  .btn-solid:hover{background:var(--wine);box-shadow:0 22px 46px -20px rgba(59,12,26,.55);}
+  .btn-line{border-color:var(--ink);color:var(--ink);}
+  .btn-line:hover{border-color:var(--amber);color:var(--amber);}
+
+  /* Shared color treatment for every photograph on the site — keeps them reading as one campaign/universe
+     even though each is now pulled from an external URL rather than a pre-graded local file. */
+  .hero-bleed,.adn-media,.format-media,.vitrine,.slot--photo,.eco-media,.closing-media,.video-strip-media,.band-media{
+    filter:saturate(.94) contrast(1.07) brightness(1.02) sepia(.05);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;overflow:hidden;isolation:isolate;
+    padding-block:clamp(40px,6vw,72px) clamp(52px,7vw,88px);
+    min-height:clamp(0px,80vh,820px);
+    display:flex;align-items:center;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,4vw,56px);align-items:center;position:relative;z-index:2;width:100%;}
+  @media (max-width:840px){.hero-grid{grid-template-columns:1fr;}}
+  .hero h1{margin-bottom:.3em;}
+  .hero .lede{font-size:clamp(1.05rem,.4vw + 1rem,1.3rem);font-weight:600;color:var(--wine);max-width:44ch;margin-bottom:.8em;}
+  .hero .desc{color:var(--ink-soft);margin-bottom:1.8em;max-width:46ch;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+
+  /* full-bleed hero photo — protagonist of the composition, right half of the viewport, fading into the page background on its inner edge so it reads as one continuous scene rather than a boxed picture */
+  .hero-bleed{
+    position:absolute;top:0;right:0;bottom:0;z-index:0;
+    width:min(56%,860px);
+    background-size:cover;background-position:center 40%;
+    -webkit-mask-image:linear-gradient(90deg, transparent 0%, rgba(0,0,0,.5) 16%, #000 34%);
+    mask-image:linear-gradient(90deg, transparent 0%, rgba(0,0,0,.5) 16%, #000 34%);
+  }
+  .hero-bleed::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(200deg, rgba(59,12,26,.30) 0%, transparent 42%),
+               linear-gradient(0deg, rgba(15,8,10,.45) 0%, transparent 42%);
+  }
+  @media (max-width:840px){
+    .hero{min-height:0;display:block;padding-block:clamp(28px,6vw,40px) clamp(40px,7vw,56px);}
+    .hero-bleed{
+      position:relative;inset:auto;width:auto;z-index:auto;
+      aspect-ratio:5/4;border-radius:20px;box-shadow:var(--shadow);
+      margin-bottom:clamp(24px,6vw,32px);
+      -webkit-mask-image:linear-gradient(180deg,#000 82%, transparent 100%);
+      mask-image:linear-gradient(180deg,#000 82%, transparent 100%);
+    }
+  }
+
+  /* ambient floating blobs — warm glow bleeding from the photo edge into the page background, reinforcing the soft seam rather than a hard cut */
+  .hero-blob{position:absolute;z-index:0;border-radius:50%;filter:blur(70px);pointer-events:none;opacity:.5;}
+  .hero-blob--a{width:clamp(220px,28vw,420px);aspect-ratio:1;right:32%;top:-14%;background:radial-gradient(circle, rgba(217,102,30,.5), transparent 70%);}
+  .hero-blob--b{width:clamp(180px,24vw,340px);aspect-ratio:1;right:40%;bottom:-16%;background:radial-gradient(circle, rgba(92,19,39,.38), transparent 70%);}
+  @media (max-width:840px){.hero-blob{display:none;}}
+  @media (prefers-reduced-motion: no-preference){
+    .hero-blob--a{animation:float-a 22s ease-in-out infinite;}
+    .hero-blob--b{animation:float-b 26s ease-in-out infinite;}
+  }
+  @keyframes float-a{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(3%,4%) scale(1.06);}}
+  @keyframes float-b{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-4%,-3%) scale(1.08);}}
+
+  [data-parallax]{will-change:transform;}
+
+  /* ---------- MEDIA SLOT (photo/video placeholders) ---------- */
+  .slot{
+    position:relative;overflow:hidden;border-radius:16px;
+    background:linear-gradient(180deg,var(--wine-deep) 0%, var(--amber) 62%, var(--gold) 100%);
+    display:flex;align-items:flex-end;
+    isolation:isolate;
+  }
+  .slot::before{ /* sun */
+    content:"";position:absolute;left:50%;top:38%;width:38%;aspect-ratio:1;
+    background:radial-gradient(circle, rgba(255,241,214,.95) 0%, rgba(240,169,78,.55) 45%, rgba(240,169,78,0) 72%);
+    transform:translate(-50%,-50%);border-radius:50%;z-index:0;
+  }
+  .slot::after{ /* horizon */
+    content:"";position:absolute;left:0;right:0;bottom:34%;height:2px;
+    background:rgba(0,0,0,.18);z-index:0;
+  }
+  .slot-tag{
+    position:relative;z-index:1;width:100%;
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:14px 16px;background:linear-gradient(0deg, rgba(20,8,12,.62), rgba(20,8,12,0));
+    color:#FBF3E6;font-size:.82rem;font-weight:600;
+  }
+  .slot-tag .icon{width:1.1em;height:1.1em;flex:none;}
+  .slot-tag .note{font-family:var(--font-script);font-size:1.15rem;font-weight:700;color:var(--gold);white-space:nowrap;}
+  .slot.tall{aspect-ratio:4/5;}
+  .slot.wide{aspect-ratio:16/10;}
+  .slot.square{aspect-ratio:1/1;}
+  .slot--photo{background-position:center;background-size:cover;}
+  .slot--photo::before,.slot--photo::after{display:none;}
+
+  /* ---------- VIDEO STRIP ---------- */
+  .video-strip{width:100%;height:50vh;min-height:340px;position:relative;overflow:hidden;}
+  .video-strip .slot{position:absolute;inset:0;border-radius:0;height:100%;}
+  .video-strip .slot::after{display:none;}
+  .video-strip-media{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;}
+  .video-strip-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg, rgba(15,8,10,.55) 0%, rgba(15,8,10,.15) 45%, rgba(15,8,10,.4) 100%);}
+  .video-strip .play{
+    position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;color:#FBF3E6;text-align:center;padding:0 20px;
+    background:none;border:none;font:inherit;cursor:pointer;width:100%;
+  }
+  .video-strip .play:hover .play-btn,.video-strip .play:focus-visible .play-btn{background:rgba(251,243,230,.22);}
+  .video-strip.is-playing .play{opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .play-btn{
+    width:clamp(64px,7vw,92px);height:clamp(64px,7vw,92px);border-radius:50%;
+    background:rgba(251,243,230,.14);border:2px solid rgba(251,243,230,.85);
+    display:flex;align-items:center;justify-content:center;backdrop-filter:blur(3px);
+  }
+  .play-btn .icon{width:38%;height:38%;stroke:none;fill:#FBF3E6;}
+  .video-caption{max-width:44ch;color:var(--ink-soft);font-size:.9rem;text-align:center;margin:18px auto 0;}
+
+  /* ---------- SECTION HEADERS ---------- */
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(28px,4vw,52px);flex-wrap:wrap;}
+  .sec-head p{color:var(--ink-soft);max-width:48ch;}
+
+  /* ---------- ADN ---------- */
+  .adn{background:var(--wine);color:var(--cream);border-radius:28px;box-shadow:0 50px 100px -56px rgba(92,19,39,.6);}
+  .adn .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,64px);align-items:center;padding-block:clamp(40px,6vw,76px);}
+  .adn-text{min-width:0;}
+  .adn-media{
+    align-self:stretch;min-height:280px;border-radius:20px;overflow:hidden;
+    background-size:cover;background-position:center;box-shadow:0 24px 50px -26px rgba(15,8,10,.6);
+    position:relative;isolation:isolate;
+  }
+  .adn-media::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg, rgba(92,19,39,.28) 0%, transparent 55%);}
+  @media (max-width:840px){.adn .wrap{grid-template-columns:1fr;}.adn-media{min-height:0;aspect-ratio:4/3;order:-1;}}
+  .adn h2{color:#FBF3E6;}
+  .tag-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .tag{border:1px solid rgba(251,243,230,.4);border-radius:100px;padding:.4em 1em;font-size:.82rem;font-weight:600;}
+  .not-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px;}
+  .not-list li{display:flex;gap:10px;font-size:.95rem;color:rgba(251,243,230,.85);}
+  .not-list li::before{content:"✕";color:var(--amber-light);font-weight:700;}
+  .mantra{font-family:var(--font-script);font-size:clamp(1.6rem,1.6vw + 1rem,2.4rem);color:var(--gold);margin-top:26px;font-weight:700;text-wrap:balance;}
+
+  /* ---------- LINEAS ---------- */
+  .lineas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  @media (max-width:940px){.lineas-grid{grid-template-columns:1fr;}.linea-card .slot.wide{aspect-ratio:4/3;}}
+  .linea-card{background:var(--cream);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;}
+  .linea-card .slot{border-radius:0;}
+  .linea-body{padding:24px;display:flex;flex-direction:column;gap:14px;flex:1;}
+  .linea-body .kicker{font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;}
+  .linea-body p{color:var(--ink-soft);font-size:.95rem;}
+  .linea-quote{font-family:var(--font-script);font-size:1.3rem;font-weight:700;margin-top:auto;}
+  .linea-card.skyfest .kicker,.linea-card.skyfest .linea-quote{color:var(--amber);}
+  .linea-card.aspe .kicker,.linea-card.aspe .linea-quote{color:var(--wine);}
+  .linea-card.mercado .kicker,.linea-card.mercado .linea-quote{color:#946B1D;}
+
+  /* ---------- CONCERTSOST AXES ---------- */
+  .band{background:var(--wine-deep);color:var(--cream);border-radius:28px;box-shadow:0 50px 100px -56px rgba(15,8,10,.65);position:relative;overflow:hidden;isolation:isolate;}
+  /* the photo is never a distinct rectangle here — a wide, soft vignette mask plus a luminosity blend lets it
+     emerge from the wine-deep card color and fade back into it, rather than sitting on top of it. The 8-axis
+     grid cells sit on top of the photo, so their fill is a translucent wash of the card color (not solid) —
+     otherwise the grid would simply paint over the image and it would never read as visible. */
+  .band-media{
+    position:absolute;inset:0;z-index:0;
+    background-size:cover;background-position:42% 60%;
+    opacity:.6;mix-blend-mode:luminosity;
+    -webkit-mask-image:radial-gradient(140% 120% at 48% 46%, #000 0%, #000 55%, rgba(0,0,0,.4) 80%, transparent 100%);
+    mask-image:radial-gradient(140% 120% at 48% 46%, #000 0%, #000 55%, rgba(0,0,0,.4) 80%, transparent 100%);
+  }
+  .band-media::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(200deg, rgba(59,12,26,.15) 0%, var(--wine-deep) 82%);
+  }
+  .band > .wrap{position:relative;z-index:1;}
+  .band .eyebrow{color:var(--gold);}
+  .band .eyebrow::before{background:var(--gold);}
+  .band h2{color:#FBF3E6;}
+  .band .sec-head p{color:rgba(245,231,211,.72);}
+  .axes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(245,231,211,.16);border:1px solid rgba(245,231,211,.16);border-radius:18px;overflow:hidden;}
+  @media (max-width:900px){.axes-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.axes-grid{grid-template-columns:1fr;}}
+  .axis{background:var(--wine-deep);background:color-mix(in srgb, var(--wine-deep) 88%, transparent);padding:26px 22px;display:flex;flex-direction:column;gap:10px;min-height:210px;}
+  .axis .num{font-family:var(--font-display);font-weight:900;font-size:2.1rem;color:rgba(245,231,211,.28);line-height:1;}
+  .axis .icon{width:26px;height:26px;color:var(--gold);margin-top:-30px;}
+  .axis h3{font-size:1.02rem;color:#FBF3E6;text-transform:none;letter-spacing:0;font-weight:800;margin-top:4px;}
+  .axis p{font-size:.86rem;color:rgba(245,231,211,.72);}
+
+  /* ---------- FORMATOS (cinematic, full-bleed) ---------- */
+  .formatos-cine{
+    position:relative;padding-block:0;color:#F5E7D3;overflow:hidden;isolation:isolate;
+    background:linear-gradient(to bottom,
+      var(--sand) 0%, var(--wine-deep) 7%, #060403 16%,
+      #060403 84%, var(--wine-deep) 93%, var(--sand) 100%);
+  }
+  .formatos-cine::before{
+    content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(60% 38% at 50% 26%, rgba(232,132,46,.30), transparent 70%),
+      radial-gradient(55% 36% at 50% 60%, rgba(213,99,124,.22), transparent 70%),
+      radial-gradient(55% 36% at 50% 87%, rgba(232,179,78,.22), transparent 70%);
+    filter:blur(46px);
+  }
+  .cine-blob{position:absolute;z-index:0;border-radius:50%;filter:blur(74px);pointer-events:none;opacity:.6;}
+  .cine-blob--1{width:clamp(260px,32vw,480px);aspect-ratio:1;left:6%;top:8%;background:radial-gradient(circle, rgba(232,132,46,.3), transparent 70%);}
+  .cine-blob--2{width:clamp(220px,28vw,420px);aspect-ratio:1;right:4%;bottom:12%;background:radial-gradient(circle, rgba(213,99,124,.26), transparent 70%);}
+  @media (prefers-reduced-motion: no-preference){
+    .cine-blob--1{animation:float-a 30s ease-in-out infinite;}
+    .cine-blob--2{animation:float-b 34s ease-in-out infinite;}
+  }
+
+  .cine-head{position:relative;z-index:1;padding-block:clamp(64px,10vw,110px) clamp(36px,5vw,56px);}
+  .cine-head .eyebrow{color:#E8B34E;}
+  .cine-head .eyebrow::before{background:#E8B34E;}
+  .cine-head h2{color:#FBF3E6;}
+  .cine-head p{color:rgba(245,231,211,.68);}
+
+  .format-row{position:relative;z-index:1;padding-inline:24px;}
+  .format-row .wrap{padding-inline:0;}
+  .format-media{position:absolute;inset:0;z-index:0;background-position:center;background-size:cover;}
+  .format-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;}
+  .format-content{position:relative;z-index:2;}
+  .format-index{font-family:var(--font-display);font-weight:900;font-size:clamp(2.4rem,3vw,3.4rem);color:rgba(245,231,211,.26);line-height:1;display:block;margin-bottom:6px;}
+  .format-tag{display:inline-flex;align-items:center;gap:.5em;border:1px solid rgba(245,231,211,.35);border-radius:100px;padding:.4em 1.1em;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px;}
+  .format-note{font-family:var(--font-script);font-size:1.05rem;font-weight:700;color:#E8B34E;display:inline-block;margin-top:16px;}
+  .format-desc{color:rgba(245,231,211,.8);}
+  .format-list{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px;}
+  .format-list li{display:flex;gap:10px;font-size:.92rem;color:rgba(245,231,211,.78);}
+  .format-list li::before{content:"";width:6px;height:6px;margin-top:.55em;border-radius:50%;background:currentColor;flex:none;}
+  .media-note{position:absolute;z-index:2;display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;color:rgba(245,231,211,.85);background:rgba(5,4,3,.5);padding:.5em .9em;border-radius:100px;backdrop-filter:blur(4px);max-width:min(76vw,320px);}
+  .media-note .icon{width:1.1em;height:1.1em;flex:none;}
+
+  /* Row 1 — Full-equip: flagship, full-bleed */
+  .format-row--full{min-height:min(84vh,820px);display:flex;align-items:flex-end;border-top:1px solid rgba(245,231,211,.12);}
+  .format-row--full .format-media{
+    background-image:
+      linear-gradient(200deg, rgba(232,132,46,.3), transparent 55%),
+      linear-gradient(20deg, rgba(213,99,124,.14), transparent 60%),
+      radial-gradient(120% 90% at 78% 12%, rgba(39,20,6,.5) 0%, rgba(12,7,5,.7) 60%),
+      var(--photo, none);
+    background-size:cover,cover,cover,cover;
+    background-position:center,center,center,center;
+    background-attachment:fixed;
+  }
+  .format-row--full .format-scrim{background:linear-gradient(0deg, rgba(4,3,2,.95) 0%, rgba(4,3,2,.66) 40%, rgba(4,3,2,.05) 78%);}
+  .format-row--full .format-content{padding-block:clamp(48px,8vw,90px);max-width:640px;}
+  .format-row--full .format-tag{border-color:rgba(232,132,46,.55);color:#F2A868;}
+  .format-row--full h3{font-size:clamp(2.5rem,4vw,4.3rem);color:#FBF3E6;margin-bottom:14px;}
+  .format-row--full .format-desc{font-size:1.05rem;max-width:52ch;}
+  .format-row--full .format-list li::before{background:#F2A868;}
+  .format-row--full .media-note{right:24px;bottom:24px;}
+
+  /* Row 2 — Córner: compact split, in preparation */
+  .format-row--corner{min-height:min(50vh,420px);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;border-top:1px solid rgba(245,231,211,.1);gap:0;}
+  .format-row--corner .format-content{padding-block:44px;}
+  .format-row--corner .format-tag{border-color:rgba(213,99,124,.55);color:#E092A3;}
+  .format-row--corner h3{font-size:clamp(1.7rem,2.4vw,2.4rem);color:#FBF3E6;margin-bottom:10px;}
+  .format-row--corner .format-desc{font-size:.96rem;max-width:44ch;color:rgba(245,231,211,.68);}
+  .format-row--corner .format-list li::before{background:#E092A3;}
+  .format-row--corner .format-media-wrap{position:relative;height:100%;min-height:280px;padding:28px 0 28px 0;}
+  .format-row--corner .format-media{
+    position:absolute;inset:28px 0 28px 0;border-radius:18px;overflow:hidden;
+    background-image:radial-gradient(120% 100% at 30% 20%, rgba(213,99,124,.28), transparent 60%),
+               linear-gradient(200deg, rgba(7,4,4,.1) 30%, rgba(7,4,4,.72) 100%),
+               var(--photo, linear-gradient(160deg,#180a10,#070404));
+    background-size:cover,cover,cover;
+    background-position:center,center,center;
+    box-shadow:inset 0 0 0 1px rgba(245,231,211,.14);
+  }
+  .format-row--corner .media-note{left:16px;bottom:16px;}
+  @media (max-width:860px){
+    .format-row--corner{grid-template-columns:1fr;}
+    .format-row--corner .format-media-wrap{padding:0 0 28px;min-height:300px;}
+    .format-row--corner .format-media{inset:0 0 28px;background-position:center 40%;}
+  }
+
+  /* Row 3 — Boutique: intimate, centered vitrine — enlarged to feel like a genuine centerpiece, not a token illustration */
+  .format-row--boutique{min-height:min(72vh,620px);display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;border-top:1px solid rgba(245,231,211,.1);padding-block:72px;}
+  .format-row--boutique .vitrine{
+    width:clamp(240px,34vw,420px);aspect-ratio:1;border-radius:50%;margin-bottom:28px;
+    background-image:radial-gradient(65% 65% at 40% 35%, rgba(232,179,78,.4), transparent 70%),
+               radial-gradient(100% 100% at 50% 50%, rgba(32,19,6,.15), rgba(8,5,2,.75)),
+               var(--photo, radial-gradient(100% 100% at 50% 50%, #201306, #080502));
+    background-size:cover,cover,cover;
+    background-position:center,center,center;
+    box-shadow:0 0 0 1px rgba(245,231,211,.16), 0 40px 80px -28px rgba(0,0,0,.75);
+  }
+  @media (max-width:640px){.format-row--boutique .vitrine{width:clamp(200px,58vw,300px);}}
+  .format-row--boutique .format-tag{border-color:rgba(232,179,78,.55);color:#EFC57C;}
+  .format-row--boutique h3{font-size:clamp(1.7rem,2.4vw,2.3rem);color:#FBF3E6;margin-bottom:10px;}
+  .format-row--boutique .format-desc{font-size:.96rem;max-width:46ch;margin-inline:auto;color:rgba(245,231,211,.68);}
+  .format-row--boutique .format-list{display:inline-grid;text-align:left;margin-top:18px;}
+  .format-row--boutique .format-list li::before{background:#EFC57C;}
+
+  @media (max-width:700px){
+    .format-row--full{min-height:min(76vh,680px);flex-direction:column;align-items:stretch;}
+    .format-row--full .format-content{padding-bottom:8px;}
+    .format-row--full .media-note{position:static;margin:0 24px 28px;max-width:none;align-self:flex-start;}
+    /* fixed backgrounds are janky/unsupported on mobile browsers — scroll normally there */
+    .format-row--full .format-media{background-attachment:scroll;}
+  }
+
+  /* ---------- SOSTENIBILIDAD ---------- */
+  .sost{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:center;position:relative;z-index:1;}
+  .sost > div{min-width:0;}
+  @media (max-width:900px){.sost{grid-template-columns:1fr;}}
+  .sost-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:16px;}
+  .sost-list li{display:flex;gap:14px;align-items:flex-start;}
+  .sost-list li > div{min-width:0;}
+  .sost-list .icon{width:22px;height:22px;color:var(--amber);flex:none;margin-top:3px;}
+  .sost-list strong{display:block;font-size:1rem;}
+  .sost-list span{color:var(--ink-soft);font-size:.92rem;}
+
+  /* eco panel — a visually differentiated territory (sage accent, organic photo mask, soft ambient blobs) that still reads as VINAL FEST, not a "green corporate" insert */
+  .eco-panel{
+    position:relative;isolation:isolate;overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 6% 0%, var(--sage-light) 0%, transparent 58%),
+      radial-gradient(90% 70% at 100% 100%, rgba(217,102,30,.10) 0%, transparent 60%),
+      var(--cream);
+    border-radius:32px;
+    padding:clamp(28px,5vw,64px);
+    box-shadow:var(--shadow);
+  }
+  .eco-panel .eyebrow{color:var(--sage-strong);}
+  .eco-panel .eyebrow::before{background:var(--sage-strong);}
+  .eco-panel .sost-list .icon{color:var(--sage-strong);}
+  .eco-blob{position:absolute;z-index:0;border-radius:50%;filter:blur(60px);pointer-events:none;opacity:.55;}
+  .eco-blob--a{width:clamp(180px,22vw,320px);aspect-ratio:1;left:-6%;top:-14%;background:radial-gradient(circle, rgba(124,138,94,.42), transparent 70%);}
+  .eco-blob--b{width:clamp(160px,20vw,280px);aspect-ratio:1;right:-8%;bottom:-16%;background:radial-gradient(circle, rgba(217,102,30,.22), transparent 70%);}
+  @media (prefers-reduced-motion: no-preference){
+    .eco-blob--a{animation:float-a 24s ease-in-out infinite;}
+    .eco-blob--b{animation:float-b 28s ease-in-out infinite;}
+  }
+  .eco-media-wrap{position:relative;will-change:transform;}
+  @media (prefers-reduced-motion: no-preference){
+    .eco-media-wrap{transition:transform .8s cubic-bezier(.22,.61,.36,1);}
+  }
+  .eco-media{
+    position:relative;aspect-ratio:4/5;
+    background-size:cover;background-position:center;
+    border-radius:58% 42% 63% 37% / 41% 55% 45% 59%;
+    box-shadow:0 30px 60px -26px rgba(15,8,10,.4);
+    isolation:isolate;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .eco-media{animation:eco-breathe 9s ease-in-out infinite;}
+  }
+  @keyframes eco-breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.018) rotate(.4deg);}}
+  .eco-media::after{
+    content:"";position:absolute;inset:0;border-radius:inherit;
+    background:linear-gradient(200deg, rgba(94,110,69,.24) 0%, transparent 50%),
+               linear-gradient(0deg, rgba(15,8,10,.38) 0%, transparent 42%);
+  }
+  .eco-tag{
+    position:absolute;left:22px;bottom:22px;z-index:1;max-width:calc(100% - 44px);
+    display:inline-flex;align-items:center;gap:.5em;
+    background:rgba(20,8,12,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+    color:#FBF3E6;font-size:.82rem;font-weight:600;
+    padding:.55em 1em;border-radius:100px;
+  }
+  @media (max-width:900px){.eco-media{aspect-ratio:5/4;}.eco-media-wrap{order:-1;}.eco-panel{border-radius:26px;}}
+
+  /* ---------- COMUNIDAD / gamification ---------- */
+  .loop{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px;}
+  @media (max-width:760px){.loop{grid-template-columns:1fr 1fr;}}
+  .loop-step{position:relative;background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center;}
+  .loop-step .icon{width:26px;height:26px;color:var(--amber);}
+  .loop-step h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;margin:10px 0 4px;}
+  .loop-step p{font-size:.82rem;color:var(--ink-soft);margin:0 auto;}
+  .loop-step .arrow{display:none;}
+  @media (min-width:761px){
+    .loop-step:not(:last-child)::after{content:"→";position:absolute;right:-19px;top:50%;transform:translateY(-50%);color:var(--amber);font-weight:700;}
+  }
+  .cats{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
+  .cats span{background:var(--wine);color:var(--cream);border-radius:100px;padding:.5em 1.1em;font-size:.85rem;font-weight:600;}
+
+  /* ---------- PARTNERS ---------- */
+  .partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media (max-width:840px){.partners-grid{grid-template-columns:1fr;}}
+  .partner{border-top:3px solid var(--amber);padding-top:16px;}
+  .partner p{color:var(--ink-soft);font-size:.94rem;}
+
+  /* ---------- CLOSING BAND ---------- */
+  /* the photo fades into var(--wine-deep) at both edges via a background gradient behind it plus a matching mask,
+     so it reads as a continuous pour into the footer rather than a boxed photo dropped between two blocks */
+  .closing-band{
+    position:relative;padding-block:0;height:clamp(440px,64vh,760px);
+    display:flex;align-items:center;justify-content:center;overflow:hidden;isolation:isolate;
+    background:linear-gradient(to bottom, var(--sand) 0%, var(--wine-deep) 16%, var(--wine-deep) 100%);
+  }
+  .closing-media{
+    position:absolute;inset:0;z-index:0;background-size:cover;background-position:center 35%;
+    -webkit-mask-image:linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    mask-image:linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
+  }
+  /* scroll-linked reveal: starts dark, lightens as the section is scrolled through, and reverses
+     naturally on scroll-up because it is just a function of current scroll position, not a one-shot trigger */
+  .closing-reveal{position:absolute;inset:0;z-index:1;pointer-events:none;background:var(--wine-deep);opacity:1;will-change:opacity;}
+  @media (prefers-reduced-motion: reduce){.closing-reveal{display:none;}}
+  .closing-scrim{
+    position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:linear-gradient(90deg, rgba(15,8,10,.62) 0%, rgba(15,8,10,.2) 42%, rgba(15,8,10,.2) 58%, rgba(15,8,10,.62) 100%),
+               linear-gradient(0deg, var(--wine-deep) 0%, transparent 26%, transparent 80%, rgba(59,12,26,.35) 100%);
+  }
+  .closing-line{
+    position:relative;z-index:3;color:#FBF3E6;font-size:clamp(1.4rem,1.6vw + 1rem,2.2rem);
+    text-align:center;max-width:26ch;padding-inline:24px;text-shadow:0 4px 24px rgba(0,0,0,.55);
+  }
+  .closing-mark{
+    position:absolute;z-index:2;bottom:12%;left:50%;transform:translateX(-50%);
+    height:clamp(30px,4vw,44px);width:auto;opacity:.22;pointer-events:none;
+    filter:invert(1) brightness(1.06) drop-shadow(0 2px 10px rgba(0,0,0,.4));
+  }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{background:var(--wine-deep);color:rgba(245,231,211,.85);border-radius:28px 28px 0 0;margin-top:-1px;}
+  .foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;}
+  @media (max-width:760px){.foot-grid{grid-template-columns:1fr;}}
+  footer h4{font-family:var(--font-body);text-transform:uppercase;font-size:.78rem;letter-spacing:.14em;color:var(--gold);font-weight:700;margin-bottom:14px;}
+  footer a{text-decoration:none;color:inherit;}
+  footer a:hover{color:var(--gold);}
+  .foot-list{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:.92rem;}
+  .foot-bottom{border-top:1px solid rgba(245,231,211,.14);margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.8rem;color:rgba(245,231,211,.5);}
+
+  /* subtle entrance only — content is always visible at rest, never gated on JS.
+     transform-only (never opacity), so nothing is ever hidden while waiting on JS/observers. */
+  @media (prefers-reduced-motion: no-preference){
+    .reveal-init,.reveal-item{transition:transform .7s cubic-bezier(.22,.61,.36,1);}
+    .reveal-init:not(.in),.reveal-item:not(.in){transform:translateY(14px);}
+    /* progressive stagger for grids of cards — delay only, never opacity/visibility */
+    .stagger > *:nth-child(1){transition-delay:0s;}
+    .stagger > *:nth-child(2){transition-delay:.08s;}
+    .stagger > *:nth-child(3){transition-delay:.16s;}
+    .stagger > *:nth-child(4){transition-delay:.24s;}
+    .stagger > *:nth-child(5){transition-delay:.32s;}
+    .stagger > *:nth-child(6){transition-delay:.4s;}
+    .stagger > *:nth-child(7){transition-delay:.48s;}
+    .stagger > *:nth-child(8){transition-delay:.56s;}
+  }
+
+  /* ---------- micro-interactions: cards react to hover, never to scroll position ---------- */
+  @media (prefers-reduced-motion: no-preference){
+    .linea-card,.loop-step,.partner{transition:transform .5s cubic-bezier(.22,.61,.36,1), box-shadow .5s ease;}
+    .linea-card:hover{transform:translateY(-6px);}
+    .loop-step:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+    .partner:hover{transform:translateY(-4px);}
+    .axis{transition:transform .5s cubic-bezier(.22,.61,.36,1), background-color .5s ease;}
+    .axis:hover{transform:translateY(-4px);background:#0c0705;}
+  }
+
+  @media (max-width:700px){
+    .nav{flex-direction:column;align-items:flex-start;gap:12px;}
+    nav.links{width:100%;justify-content:flex-start;gap:16px;}
+  }
+</style>
+
+<!-- icon sprite -->
+<svg style="display:none">
+  <symbol id="i-glass" viewBox="0 0 24 24"><path d="M7 3h10l-1.2 8.2a3.8 3.8 0 0 1-3.8 3.3 3.8 3.8 0 0 1-3.8-3.3L7 3Z"/><line x1="12" y1="14.5" x2="12" y2="20"/><line x1="8" y1="20" x2="16" y2="20"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></symbol>
+  <symbol id="i-vote" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 12l3 3 7-7"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 16V8a1 1 0 0 1 1-1h9v9"/><path d="M13 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M6 3h12l-1 14a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3L6 3Z"/><line x1="6.5" y1="8" x2="17.5" y2="8"/><line x1="15" y1="1" x2="17.3" y2="4.6"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 20C5 10 12 4 20 4c0 8-6 15-16 16Z"/><path d="M5 20c3-6 7-9 12-11"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.2 4.2a4 4 0 0 0-5.1 4.9L3 15.2V19h3.8l6.1-6.1a4 4 0 0 0 4.9-5.1l-2.9 2.9-2.1-2.1 2.4-2.4Z"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/><rect x="14" y="14" width="7" height="7" rx="1.2"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-2h6l2 2h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.4"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M9 7.5v9l7.5-4.5L9 7.5Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.6 7-12a7 7 0 0 0-14 0c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></symbol>
+</svg>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="#inicio" class="wordmark"><img class="logo-mark" src="https://vinalfest.com/wp-content/uploads/12-LOGO-VINAL-FEST-neutro-copia.png" alt="VINAL Fest"></a>
+    <nav class="links">
+      <a href="#formatos">Formatos</a>
+      <a href="#lineas">Líneas</a>
+      <a href="#concertsost">El festival</a>
+      <a href="#sostenibilidad">Sostenibilidad</a>
+      <a href="#comunidad">Comunidad</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bleed" style="background-image:url('https://vinalfest.com/wp-content/uploads/3-vinos_copas_0052_brutos_C7951-copia-scaled.jpg')" role="img" aria-label="Copas VINAL FEST colgadas, listas para servir" data-parallax="0.05"></div>
+    <div class="hero-blob hero-blob--a" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob--b" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="reveal-init">
+        <p class="eyebrow">Un formato que se replica · bodegas, ciudades y espacios</p>
+        <h1>La revolución<br>del vino<br>suena bien.</h1>
+        <p class="lede">El primer festival enogastronómico sostenible, interactivo y sin esnobismos.</p>
+        <p class="desc">Vino, música, atardecer y una copa en la mano. VINAL FEST convierte el vino en una experiencia que se disfruta, se descubre y se comparte — sin clases magistrales y sin poses.</p>
+        <div class="hero-ctas">
+          <a href="#concertsost" class="btn btn-solid">Descubre el festival</a>
+          <a href="#lineas" class="btn btn-line">Nuestras líneas</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section id="video" aria-label="Vídeo del festival">
+    <div class="video-strip">
+      <div class="slot" aria-hidden="true"></div>
+      <video class="video-strip-media" id="campaignVideo" src="https://vinalfest.com/wp-content/uploads/Benidorm-Sin-Conciertos.mp4" muted loop playsinline autoplay preload="metadata"></video>
+      <div class="video-strip-scrim" aria-hidden="true"></div>
+      <button type="button" class="play" id="videoPlayBtn" aria-label="Reproducir con sonido a pantalla completa">
+        <div class="play-btn"><svg class="icon" viewBox="0 0 24 24"><use href="#i-play"/></svg></div>
+        <div>
+          <p class="eyebrow" style="justify-content:center;">Concertsost · el festival en movimiento</p>
+          <h2 style="color:#FBF3E6;">Así suena la revolución</h2>
+        </div>
+      </button>
+    </div>
+    <p class="video-caption wrap">Resumen de la última edición. Toca para verlo a pantalla completa con sonido.</p>
+  </section>
+
+  <!-- ADN -->
+  <section class="wrap reveal-init" id="adn">
+    <div class="adn">
+      <div class="wrap adn-wrap">
+        <div class="adn-text">
+          <p class="eyebrow">Identidad de marca</p>
+          <h2>El vino dejó de<br>ser un examen.</h2>
+          <p style="margin-top:16px;color:rgba(251,243,230,.8);max-width:46ch;">VINAL FEST conecta vino, cultura, gastronomía, música y encuentro. Queremos que disfrutar, descubrir y compartir sea accesible — con criterio, pero sin superioridad.</p>
+          <div class="tag-row">
+            <span class="tag">Cercana</span><span class="tag">Mediterránea</span><span class="tag">Contemporánea</span>
+            <span class="tag">Sensorial</span><span class="tag">Festiva</span><span class="tag">Accesible</span>
+          </div>
+          <ul class="not-list">
+            <li>Un club cerrado de expertos</li>
+            <li>Una marca de vino excesivamente solemne</li>
+            <li>Un festival genérico al que simplemente se añade vino</li>
+          </ul>
+          <p class="mantra">"Disfrutar del vino, la gastronomía<br>y los buenos encuentros."</p>
+        </div>
+        <div class="adn-media" style="background-image:url('https://vinalfest.com/wp-content/uploads/4-infraestructura_0218_brutos_C8125-copia-scaled.jpg')" role="img" aria-label="Detalle de la barra VINAL FEST"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATOS (cinematic) -->
+  <section class="formatos-cine reveal-init" id="formatos" aria-label="Formatos del festival">
+    <div class="cine-blob cine-blob--1" aria-hidden="true"></div>
+    <div class="cine-blob cine-blob--2" aria-hidden="true"></div>
+    <div class="wrap cine-head">
+      <p class="eyebrow">Un diseño llave en mano</p>
+      <h2>Tres formatos,<br>un mismo festival.</h2>
+      <p>VINAL FEST no es un bloque rígido: es un sistema de módulos que se adapta al espacio, al aforo y al aliado estratégico. Tres formas de desplegarlo — cada una con su propia personalidad.</p>
+    </div>
+
+    <!-- Fila 1 · Full-equip (desarrollado) -->
+    <div class="format-row format-row--full" id="formato-full-equip">
+      <div class="format-media format-media--photo" style="--photo:url('https://vinalfest.com/wp-content/uploads/5-publico_0373_hombresg_V2-0002_C4852-copia-scaled.jpg')" aria-hidden="true"></div>
+      <div class="format-scrim" aria-hidden="true"></div>
+      <div class="wrap format-content">
+        <span class="format-index">01</span>
+        <span class="format-tag">Urbano · Full-equip</span>
+        <h3>Despliegue completo</h3>
+        <p class="format-desc">Para espacios de gran capacidad, la organización implementa el 100% de sus propios módulos de forma totalmente autónoma: carrusel, escenario y backstage propios, pensados para grandes aforos y espacios abiertos.</p>
+        <ul class="format-list">
+          <li>Carrusel, escenario y backstage 100% propios</li>
+          <li>Despliegue autónomo, sin depender de infraestructura ajena</li>
+          <li>Pensado para grandes aforos y espacios abiertos</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Fila 2 · Córner (preparado para foto y contenido) -->
+    <div class="format-row format-row--corner reveal-item" id="formato-corner">
+      <div class="wrap format-content">
+        <span class="format-index">02</span>
+        <span class="format-tag">Córner</span>
+        <h3>Dentro de otro festival</h3>
+        <p class="format-desc">Se integra como zona temática o VIP en macroeventos ya existentes, aportando la experiencia core de VINAL FEST sobre la infraestructura anfitriona.</p>
+        <ul class="format-list">
+          <li>Bodegas + estética + gamificación</li>
+          <li>Si se mantiene varias semanas, es "residencia"</li>
+        </ul>
+        <span class="format-note">Más contenido próximamente</span>
+      </div>
+      <div class="format-media-wrap">
+        <div class="format-media format-media--photo" style="--photo:url('https://vinalfest.com/wp-content/uploads/6-DRON_0032_DJI_20260724213621_0155_D-scaled.jpg')" aria-hidden="true"></div>
+        <div class="media-note"><svg class="icon" viewBox="0 0 24 24"><use href="#i-camera"/></svg> Zona VIP dentro de otro festival</div>
+      </div>
+    </div>
+
+    <!-- Fila 3 · Boutique (preparado para foto y contenido) -->
+    <div class="format-row format-row--boutique reveal-item" id="formato-boutique">
+      <span class="format-index">03</span>
+      <div class="vitrine vitrine--photo" style="--photo:url('https://vinalfest.com/wp-content/uploads/7-infraestructura_1134_wetransfer_ivaik8092-copia-scaled.jpg')" aria-hidden="true"></div>
+      <span class="format-tag">Boutique</span>
+      <h3>Plazas y espacios compactos</h3>
+      <p class="format-desc">Escala reducida — por ejemplo 2-3 bodegas y 3 food trucks — fusionando servicios: la barra blanca se integra en el propio carrusel de vinos.</p>
+      <ul class="format-list">
+        <li>Aforo limitado</li>
+        <li>Ideal para plazas y mercados</li>
+      </ul>
+      <span class="format-note">Más contenido próximamente</span>
+    </div>
+  </section>
+
+  <!-- LINEAS -->
+  <section class="wrap reveal-init" id="lineas">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Arquitectura de marca</p>
+        <h2>Tres formas de<br>vivir el vino.</h2>
+      </div>
+      <p>Un mismo ADN, tres territorios. Cada línea comparte los principios de VINAL FEST, pero habla con su propio acento.</p>
+    </div>
+
+    <div class="lineas-grid stagger">
+      <article class="linea-card skyfest reveal-item">
+        <div class="slot wide slot--photo" style="background-image:url('https://vinalfest.com/wp-content/uploads/8-DRON_0164D_0187_281s-scaled.jpg')"></div>
+        <div class="linea-body">
+          <span class="kicker">Vinal Fest × Skyfest</span>
+          <h3>Vino, música y cielo abierto</h3>
+          <p>El territorio más sensorial y aspiracional de la marca: atardecer, música en directo, brindis bajo las estrellas. Vibrante, libre, mediterránea y celebratoria.</p>
+          <p class="linea-quote">"El cielo se enciende. Tu copa también."</p>
+        </div>
+      </article>
+
+      <article class="linea-card aspe reveal-item">
+        <div class="slot wide slot--photo" style="background-image:url('https://vinalfest.com/wp-content/uploads/9-wetransfer_Brutos_ivaik8356-copia-scaled.jpg')"></div>
+        <div class="linea-body">
+          <span class="kicker">Vinal Fest Aspe</span>
+          <h3>La raíz local de la marca</h3>
+          <p>Aspe, su gente, su gastronomía y su capacidad de reunir a la comunidad. Auténtica, acogedora y orgullosa de su origen — sin cerrar la puerta a quien viene de fuera.</p>
+          <p class="linea-quote">"Aquí brindamos por lo nuestro."</p>
+        </div>
+      </article>
+
+      <article class="linea-card mercado reveal-item">
+        <div class="slot wide slot--photo" style="background-image:url('https://vinalfest.com/wp-content/uploads/10-PHOTO-2026-08-23-15-56-30.jpg')"></div>
+        <div class="linea-body">
+          <span class="kicker">Vinal Mercado</span>
+          <h3>Vino y vermú del día a día</h3>
+          <p>El puesto de VINAL FEST en el Mercado de Abastos de Aspe: vinos, vermús, gildas, embutidos y pequeños bocados. Canalla con gusto, directo y de confianza.</p>
+          <p class="linea-quote">"Ven a por vino. Quédate por el aperitivo."</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONCERTSOST -->
+  <section class="wrap reveal-init" id="concertsost">
+    <div class="band">
+      <div class="band-media" style="background-image:url('https://vinalfest.com/wp-content/uploads/vinos_copas_0073_brutos_C7972-scaled.jpg')" data-parallax="0.04" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">Concertsost · cero emisiones netas</p>
+            <h2>El modelo del<br>festival, en 8 ejes.</h2>
+          </div>
+          <p>La estructura que convierte una feria de vino en el evento de moda de la ciudad — con la sostenibilidad como escudo y el público como jurado.</p>
+        </div>
+
+        <div class="axes-grid stagger">
+          <div class="axis reveal-item"><span class="num">01</span><svg class="icon" viewBox="0 0 24 24"><use href="#i-glass"/></svg><h3>El vino: el producto core</h3><p>8-10 bodegas seleccionadas, 3-5 referencias cada una. Tintos, blancos, rosados, cavas y opciones sin alcohol garantizadas.</p></div>
+          <div class="axis reveal-item"><span class="num">02</span><svg class="icon" viewBox="0 0 24 24"><use href="#i-music"/></svg><h3>Música y ambiente</h3><p>DJs y directos en segundo plano: el clima de festival que anima la relación entre el público y el vino, sin cachés desorbitados.</p></div>
+          <div class="axis reveal-item"><span class="num">03</span><svg class="icon" viewBox="0 0 24 24"><use href="#i-vote"/></svg><h3>Juego y gamificación</h3><p>Tu copa, tus reglas. Votaciones en directo, sorteos y una app propia que construye la comunidad edición tras edición.</p></div>
+          <div class="axis reveal-item"><span class="num">04</span><svg class="icon" viewBox="0 0 24 24"><use href="#i-truck"/></svg><h3>Gastronomía y food truck</h3><p>Flota premium de food trucks con envases compostables, pensada para prolongar el tardeo sin colapsar el recinto.</p></div>
+          <div class="axis reveal-item"><span class="num">05</span><svg class="icon" viewBox="0 0 24 24"><use href="#i-cup"/></svg><h3>La barra "blanca"</h3><p>Agua, refrescos, cerveza, postres y gins para quien no bebe vino, va con niños o conduce. El motor financiero silencioso.</p></div>
+          <div class="axis reveal-item"><span class="num">06</span><svg class="icon" viewBox="0 0 24 24"><use href="#i-leaf"/></svg><h3>Sostenibilidad</h3><p>Energía limpia y biocombustible, cero plásticos de un solo uso y mobiliario con certificación forestal (FSC).</p></div>
+          <div class="axis reveal-item"><span class="num">07</span><svg class="icon" viewBox="0 0 24 24"><use href="#i-wrench"/></svg><h3>Infraestructura y backstage</h3><p>Almacén frigorífico, aseos premium, lavado de copas y energía cero emisiones — cuidado hasta donde el público no mira.</p></div>
+          <div class="axis reveal-item"><span class="num">08</span><svg class="icon" viewBox="0 0 24 24"><use href="#i-grid"/></svg><h3>Escalable y modulable</h3><p>Un sistema de módulos combinables: córner, full-equip o boutique, según el espacio y el aliado.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOSTENIBILIDAD -->
+  <section class="wrap reveal-init" id="sostenibilidad">
+    <div class="sost eco-panel" id="ecoPanel">
+      <div class="eco-blob eco-blob--a" aria-hidden="true"></div>
+      <div class="eco-blob eco-blob--b" aria-hidden="true"></div>
+      <div>
+        <p class="eyebrow">Diversión con impacto cero</p>
+        <h2>Sostenibilidad real,<br>no de escaparate.</h2>
+        <p style="margin-top:16px;color:var(--ink-soft);">El consumidor actual exige responsabilidad medioambiental. VINAL FEST no solo predica con el ejemplo: se convierte en el escenario donde bodegas y marcas demuestran su compromiso, de forma honesta y sin greenwashing.</p>
+        <ul class="sost-list">
+          <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-leaf"/></svg><div><strong>Cero emisiones netas</strong><span>Energía limpia y generadores de biocombustible, sin ruido ni humo de los generadores tradicionales.</span></div></li>
+          <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-grid"/></svg><div><strong>Economía circular</strong><span>Cero plásticos de un solo uso, mobiliario reciclado y gestión integral de residuos.</span></div></li>
+          <li><svg class="icon" viewBox="0 0 24 24"><use href="#i-wrench"/></svg><div><strong>Certificación FSC</strong><span>Mobiliario con origen forestal certificado, alineado con la Agenda 2030 y criterios ESG.</span></div></li>
+        </ul>
+      </div>
+      <div class="eco-media-wrap" id="ecoMediaWrap">
+        <div class="eco-media" style="background-image:url('https://vinalfest.com/wp-content/uploads/11-REPSOL-BIO.jpg')">
+          <span class="eco-tag"><svg class="icon" viewBox="0 0 24 24" style="width:1.1em;height:1.1em;"><use href="#i-leaf"/></svg> Cuidado hasta donde el público no mira</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMUNIDAD -->
+  <section class="wrap reveal-init" id="comunidad">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">El público es el jurado</p>
+        <h2>Tu copa, tus reglas.</h2>
+      </div>
+      <p>Un ecosistema app &amp; web que convierte cada votación en dato — y cada dato, en una comunidad que vuelve edición tras edición. Pensado para un público de 25 a 55 años.</p>
+    </div>
+
+    <div class="loop stagger">
+      <div class="loop-step reveal-item"><svg class="icon" viewBox="0 0 24 24"><use href="#i-glass"/></svg><h4>Prueba</h4><p>Descubre las referencias de cada bodega en el carrusel.</p></div>
+      <div class="loop-step reveal-item"><svg class="icon" viewBox="0 0 24 24"><use href="#i-vote"/></svg><h4>Vota</h4><p>Elige sus favoritos desde la app, escaneando el QR de cada mostrador.</p></div>
+      <div class="loop-step reveal-item"><svg class="icon" viewBox="0 0 24 24"><use href="#i-cup"/></svg><h4>Suma</h4><p>Cada voto es una participación para el sorteo de fin de fiesta.</p></div>
+      <div class="loop-step reveal-item"><svg class="icon" viewBox="0 0 24 24"><use href="#i-music"/></svg><h4>Gana</h4><p>Desde tu peso en vino hasta un fin de semana para dos en una bodega.</p></div>
+    </div>
+
+    <div class="cats">
+      <span>🏆 El vino más disfrutón</span>
+      <span>🥂 El blanco del tardeo</span>
+      <span>🎨 La etiqueta más molona</span>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="wrap reveal-init" id="partners">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Para bodegas, artistas y territorio</p>
+        <h2>¿Te sumas a<br>la revolución?</h2>
+      </div>
+      <p>Buscamos bodegas, distribuidores y patrocinadores visionarios que quieran conectar con una nueva generación de público.</p>
+    </div>
+    <div class="partners-grid stagger">
+      <div class="partner reveal-item">
+        <h3 style="text-transform:none;letter-spacing:0;font-size:1.1rem;">Bodegas y distribuidores</h3>
+        <p>Marketing directo sobre vuestro público real (25-55 años), en un entorno inmejorable — no un stand que despacha vino, sino una inversión en visibilidad, prueba y venta directa.</p>
+      </div>
+      <div class="partner reveal-item">
+        <h3 style="text-transform:none;letter-spacing:0;font-size:1.1rem;">Artistas y cultura</h3>
+        <p>Un entorno donde la música forma parte de una experiencia con identidad propia, no un cartel añadido a una feria de vino.</p>
+      </div>
+      <div class="partner reveal-item">
+        <h3 style="text-transform:none;letter-spacing:0;font-size:1.1rem;">Territorio e instituciones</h3>
+        <p>Una herramienta para activar espacios, gastronomía, turismo y comercio local — con la sostenibilidad como aval ante la administración.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="closing-band reveal-init" id="closingBand" aria-label="VINAL FEST">
+  <div class="closing-media" style="background-image:url('https://vinalfest.com/wp-content/uploads/12-vinos_copas_0069_brutos_C7968-copia-scaled.jpg')" role="img" aria-label="Activación de marca VINAL FEST a gran escala"></div>
+  <div class="closing-reveal" id="closingReveal" aria-hidden="true"></div>
+  <div class="closing-scrim" aria-hidden="true"></div>
+  <img class="closing-mark" src="https://vinalfest.com/wp-content/uploads/12-LOGO-VINAL-FEST-neutro-copia.png" alt="" aria-hidden="true">
+  <p class="closing-line script">"La revolución del vino suena bien — y viaja donde tú estés."</p>
+</section>
+
+<footer id="contacto">
+  <div class="wrap" style="padding-block:clamp(48px,7vw,80px) 28px;">
+    <div class="foot-grid">
+      <div>
+        <a href="#inicio" class="wordmark"><img class="logo-mark logo-mark--footer" src="https://vinalfest.com/wp-content/uploads/12-LOGO-VINAL-FEST-neutro-copia.png" alt="VINAL Fest"></a>
+        <p style="margin-top:14px;max-width:38ch;color:rgba(245,231,211,.7);font-size:.94rem;">La revolución del vino suena bien. Un festival enogastronómico sostenible, interactivo y sin esnobismos.</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul class="foot-list">
+          <li><a href="mailto:contacto@vinalfest.com"><svg class="icon" viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-2px;margin-right:6px;"><use href="#i-mail"/></svg>contacto@vinalfest.com</a></li>
+          <li><svg class="icon" viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-2px;margin-right:6px;"><use href="#i-pin"/></svg>Aspe · Alicante · Madrid</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explorar</h4>
+        <ul class="foot-list">
+          <li><a href="#formatos">Formatos del festival</a></li>
+          <li><a href="#lineas">Líneas de marca</a></li>
+          <li><a href="#concertsost">El modelo del festival</a></li>
+          <li><a href="#sostenibilidad">Sostenibilidad</a></li>
+          <li><a href="#partners">Bodegas y partners</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Marca de Concertsost &amp; PATOS</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var canHover = window.matchMedia('(pointer:fine)').matches;
+
+    /* ---- reveal on scroll: transform-only, content is never opacity:0, so a slow/broken
+       observer never hides anything — it just skips the slide-in polish. ---- */
+    var revealEls = document.querySelectorAll('.reveal-init, .reveal-item');
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealEls.forEach(function(e){ e.classList.add('in'); });
+    } else {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+        });
+      }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+      revealEls.forEach(function(e){ io.observe(e); });
+    }
+
+    /* ---- campaign video: muted ambient loop by default; click/tap unmutes and
+       goes fullscreen so sound only ever plays when the visitor explicitly asks for it ---- */
+    (function(){
+      var strip = document.querySelector('.video-strip');
+      var video = document.getElementById('campaignVideo');
+      var btn = document.getElementById('videoPlayBtn');
+      if (!strip || !video || !btn) return;
+      if (reduceMotion){ video.removeAttribute('autoplay'); video.pause(); }
+
+      function goFullscreenWithSound(){
+        video.muted = false;
+        video.currentTime = 0;
+        strip.classList.add('is-playing');
+        var req = video.requestFullscreen || video.webkitRequestFullscreen || video.webkitEnterFullscreen;
+        if (req) { try { req.call(video); } catch (e) {} }
+        var p = video.play();
+        if (p && p.catch) p.catch(function(){});
+      }
+
+      btn.addEventListener('click', goFullscreenWithSound);
+      btn.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); goFullscreenWithSound(); }
+      });
+
+      function exitedFullscreen(){
+        return !document.fullscreenElement && !document.webkitFullscreenElement;
+      }
+      ['fullscreenchange','webkitfullscreenchange'].forEach(function(ev){
+        document.addEventListener(ev, function(){
+          if (exitedFullscreen()){
+            video.muted = true;
+            strip.classList.remove('is-playing');
+          }
+        });
+      });
+      video.addEventListener('webkitendfullscreen', function(){
+        video.muted = true;
+        strip.classList.remove('is-playing');
+      });
+    })();
+
+    if (reduceMotion) return; // everything below is pure embellishment
+
+    /* ---- scroll direction, header show/hide, and decorative parallax ----
+       Parallax only ever touches [data-parallax] elements, which are purely
+       decorative art (hero illustration). Text, scrims and legibility layers
+       are never transformed by scroll, so contrast can't change with position. */
+    var header = document.querySelector('header.site');
+    var lastY = window.scrollY || 0;
+    var ticking = false;
+    var parallaxEls = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
+
+    /* ---- ECO section: organic, elegant interaction ----
+       - grows/settles into place on scroll entry (one-time, IntersectionObserver)
+       - drifts very gently with scroll afterwards (bidirectional, tied to position — not a one-shot)
+       - on fine pointers only, also tilts toward the cursor; touch/mobile relies on the scroll drift instead */
+    var ecoPanel = document.getElementById('ecoPanel');
+    var ecoWrap = document.getElementById('ecoMediaWrap');
+    var ecoRevealed = false, ecoTiltX = 0, ecoTiltY = 0;
+
+    function applyEco(){
+      if (!ecoWrap) return;
+      var scale = ecoRevealed ? 1 : 0.93;
+      var restY = ecoRevealed ? 0 : 16;
+      ecoWrap.style.transform = 'translate(' + ecoTiltX.toFixed(1) + 'px,' + (ecoTiltY + restY).toFixed(1) + 'px) scale(' + scale + ')';
+    }
+    if (ecoWrap){
+      if ('IntersectionObserver' in window){
+        var ecoIo = new IntersectionObserver(function(entries){
+          entries.forEach(function(en){
+            if (en.isIntersecting){ ecoRevealed = true; applyEco(); ecoIo.unobserve(en.target); }
+          });
+        }, {threshold:.2});
+        ecoIo.observe(ecoWrap);
+      } else { ecoRevealed = true; }
+      applyEco();
+    }
+    if (ecoPanel && canHover){
+      ecoPanel.addEventListener('mousemove', function(e){
+        var r = ecoPanel.getBoundingClientRect();
+        ecoTiltX = ((e.clientX - r.left) / r.width - .5) * 16;
+        ecoTiltY = ((e.clientY - r.top) / r.height - .5) * 12;
+        applyEco();
+      });
+      ecoPanel.addEventListener('mouseleave', function(){
+        ecoTiltX = 0; ecoTiltY = 0; applyEco();
+      });
+    }
+
+    /* ---- closing photo: starts dark, lightens as the section is scrolled through.
+       Recomputed every scroll frame from the section's current position, so scrolling back
+       up naturally re-darkens it instead of relying on a one-shot triggered animation. ---- */
+    var closingBand = document.getElementById('closingBand');
+    var closingReveal = document.getElementById('closingReveal');
+
+    function onScroll(){
+      var y = window.scrollY || 0;
+      var goingDown = y > lastY + 2;
+      var goingUp = y < lastY - 2;
+      if (goingDown || goingUp){
+        document.documentElement.dataset.scrollDir = goingDown ? 'down' : 'up';
+      }
+
+      if (header){
+        if (goingDown && y > 140){ header.classList.add('is-hidden'); }
+        else if (goingUp || y <= 140){ header.classList.remove('is-hidden'); }
+      }
+
+      var vh = window.innerHeight || 1;
+      parallaxEls.forEach(function(el){
+        var speed = parseFloat(el.getAttribute('data-parallax')) || 0.08;
+        var rect = el.getBoundingClientRect();
+        if (rect.bottom > -200 && rect.top < vh + 200){
+          var offset = (rect.top + rect.height / 2 - vh / 2) * speed;
+          el.style.transform = 'translate3d(0,' + offset.toFixed(1) + 'px,0)';
+        }
+      });
+
+      if (ecoWrap && ecoRevealed){
+        var er = ecoWrap.getBoundingClientRect();
+        if (er.bottom > -200 && er.top < vh + 200){
+          var drift = (er.top + er.height / 2 - vh / 2) * 0.035;
+          ecoWrap.style.transform = 'translate(' + ecoTiltX.toFixed(1) + 'px,' + (ecoTiltY + drift).toFixed(1) + 'px) scale(1)';
+        }
+      }
+
+      if (closingBand && closingReveal){
+        var cr = closingBand.getBoundingClientRect();
+        if (cr.bottom > 0 && cr.top < vh){
+          var start = vh * 0.92, end = vh * 0.22;
+          var progress = (start - cr.top) / (start - end);
+          progress = Math.max(0, Math.min(1, progress));
+          closingReveal.style.opacity = String((1 - progress) * 0.94);
+        }
+      }
+
+      lastY = y;
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function(){
+      if (!ticking){ window.requestAnimationFrame(onScroll); ticking = true; }
+    }, {passive:true});
+    onScroll();
+
+    /* ---- magnetic, tactile buttons — fine pointers only, always snap back ---- */
+    if (canHover){
+      document.querySelectorAll('.btn').forEach(function(btn){
+        btn.addEventListener('mousemove', function(e){
+          var r = btn.getBoundingClientRect();
+          var x = (e.clientX - r.left - r.width / 2) * .25;
+          var y = (e.clientY - r.top - r.height / 2) * .35;
+          btn.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px)';
+        });
+        btn.addEventListener('mouseleave', function(){ btn.style.transform = ''; });
+      });
+    }
+  })();
+</script>
+
+</body></html>
