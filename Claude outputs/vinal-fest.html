@@ -156,14 +156,17 @@
   .hero-bleed{
     position:absolute;top:0;right:0;bottom:0;z-index:0;
     width:min(56%,860px);
-    background-size:cover;background-position:center 40%;
+    background-size:cover;background-position:47% 45%;
+    /* foto de público: encuadrada sobre el grupo que brinda y sin ampliar (la imagen original, 2560x1440, siempre se reduce para encajar) */
+    filter:saturate(1.2) contrast(1.04) brightness(1.03);
     -webkit-mask-image:linear-gradient(90deg, transparent 0%, rgba(0,0,0,.5) 16%, #000 34%);
     mask-image:linear-gradient(90deg, transparent 0%, rgba(0,0,0,.5) 16%, #000 34%);
   }
   .hero-bleed::after{
     content:"";position:absolute;inset:0;
-    background:linear-gradient(200deg, rgba(59,12,26,.30) 0%, transparent 42%),
-               linear-gradient(0deg, rgba(15,8,10,.45) 0%, transparent 42%);
+    background:radial-gradient(120% 85% at 80% 16%, rgba(240,169,78,.34) 0%, transparent 62%),
+               linear-gradient(200deg, rgba(217,102,30,.20) 0%, transparent 46%),
+               linear-gradient(0deg, rgba(92,19,39,.32) 0%, transparent 46%);
   }
   @media (max-width:840px){
     .hero{min-height:0;display:block;padding-block:clamp(28px,6vw,40px) clamp(40px,7vw,56px);}
@@ -458,7 +461,7 @@
     .eco-media-wrap{transition:transform .8s cubic-bezier(.22,.61,.36,1);}
   }
   .eco-media{
-    position:relative;aspect-ratio:4/5;
+    position:relative;aspect-ratio:4/3;
     background-size:cover;background-position:center;
     border-radius:58% 42% 63% 37% / 41% 55% 45% 59%;
     box-shadow:0 30px 60px -26px rgba(15,8,10,.4);
@@ -470,8 +473,8 @@
   @keyframes eco-breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.018) rotate(.4deg);}}
   .eco-media::after{
     content:"";position:absolute;inset:0;border-radius:inherit;
-    background:linear-gradient(200deg, rgba(94,110,69,.24) 0%, transparent 50%),
-               linear-gradient(0deg, rgba(15,8,10,.38) 0%, transparent 42%);
+    background:linear-gradient(200deg, rgba(94,110,69,.16) 0%, transparent 50%),
+               linear-gradient(0deg, rgba(15,8,10,.28) 0%, transparent 38%);
   }
   .eco-tag{
     position:absolute;left:22px;bottom:22px;z-index:1;max-width:calc(100% - 44px);
@@ -610,7 +613,7 @@
 
   <!-- HERO -->
   <section class="hero" id="inicio">
-    <div class="hero-bleed" style="background-image:url('https://vinalfest.com/wp-content/uploads/3-vinos_copas_0052_brutos_C7951-copia-scaled.jpg')" role="img" aria-label="Copas VINAL FEST colgadas, listas para servir" data-parallax="0.05"></div>
+    <div class="hero-bleed" style="background-image:url('https://vinalfest.com/wp-content/uploads/personas_1777_wetransfer_ivaik7795-scaled.jpg')" role="img" aria-label="Publico brindando con copas de vino en VINAL FEST" data-parallax="0.05"></div>
     <div class="hero-blob hero-blob--a" aria-hidden="true"></div>
     <div class="hero-blob hero-blob--b" aria-hidden="true"></div>
     <div class="wrap hero-grid">
@@ -685,11 +688,11 @@
       <div class="format-scrim" aria-hidden="true"></div>
       <div class="wrap format-content">
         <span class="format-index">01</span>
-        <span class="format-tag">Urbano · Full-equip</span>
+        <span class="format-tag">Full Equip</span>
         <h3>Despliegue completo</h3>
-        <p class="format-desc">Para espacios de gran capacidad, la organización implementa el 100% de sus propios módulos de forma totalmente autónoma: carrusel, escenario y backstage propios, pensados para grandes aforos y espacios abiertos.</p>
+        <p class="format-desc">Para espacios de gran capacidad, donde nos encargamos de implementar la totalidad de nuestros módulos: escenario, barras, food trucks, perimetrado, backstage, seguridad, limpieza…</p>
         <ul class="format-list">
-          <li>Carrusel, escenario y backstage 100% propios</li>
+          <li>Barras de vino, escenario y backstage 100% propios</li>
           <li>Despliegue autónomo, sin depender de infraestructura ajena</li>
           <li>Pensado para grandes aforos y espacios abiertos</li>
         </ul>
@@ -702,12 +705,11 @@
         <span class="format-index">02</span>
         <span class="format-tag">Córner</span>
         <h3>Dentro de otro festival</h3>
-        <p class="format-desc">Se integra como zona temática o VIP en macroeventos ya existentes, aportando la experiencia core de VINAL FEST sobre la infraestructura anfitriona.</p>
+        <p class="format-desc">Integrados como zona temática o VIP en macroeventos ya existentes, aportando la experiencia core de VINAL FEST sobre la infraestructura anfitriona.</p>
         <ul class="format-list">
-          <li>Bodegas + estética + gamificación</li>
-          <li>Si se mantiene varias semanas, es "residencia"</li>
+          <li>Bodegas + estética + gamificación: un oasis donde disfrutar dentro del gran evento, la zona chill</li>
+          <li>Si se mantiene varias semanas, o una temporada completa, le llamamos “residencia”</li>
         </ul>
-        <span class="format-note">Más contenido próximamente</span>
       </div>
       <div class="format-media-wrap">
         <div class="format-media format-media--photo" style="--photo:url('https://vinalfest.com/wp-content/uploads/6-DRON_0032_DJI_20260724213621_0155_D-scaled.jpg')" aria-hidden="true"></div>
@@ -721,12 +723,11 @@
       <div class="vitrine vitrine--photo" style="--photo:url('https://vinalfest.com/wp-content/uploads/7-infraestructura_1134_wetransfer_ivaik8092-copia-scaled.jpg')" aria-hidden="true"></div>
       <span class="format-tag">Boutique</span>
       <h3>Plazas y espacios compactos</h3>
-      <p class="format-desc">Escala reducida — por ejemplo 2-3 bodegas y 3 food trucks — fusionando servicios: la barra blanca se integra en el propio carrusel de vinos.</p>
+      <p class="format-desc">Una plaza, un evento de empresa, una bodega… Escala reducida y fusionando servicios.</p>
       <ul class="format-list">
-        <li>Aforo limitado</li>
-        <li>Ideal para plazas y mercados</li>
+        <li>Añadiendo experiencias: catas divertidas, ambientación de vendimia…</li>
+        <li>Aforo reducido y limitado</li>
       </ul>
-      <span class="format-note">Más contenido próximamente</span>
     </div>
   </section>
 
@@ -816,8 +817,8 @@
         </ul>
       </div>
       <div class="eco-media-wrap" id="ecoMediaWrap">
-        <div class="eco-media" style="background-image:url('https://vinalfest.com/wp-content/uploads/11-REPSOL-BIO.jpg')">
-          <span class="eco-tag"><svg class="icon" viewBox="0 0 24 24" style="width:1.1em;height:1.1em;"><use href="#i-leaf"/></svg> Cuidado hasta donde el público no mira</span>
+        <div class="eco-media" style="background-image:url('https://vinalfest.com/wp-content/uploads/Codex-Image-Sep-17-2026-11_49_44-AM.png')">
+          <span class="eco-tag"><svg class="icon" viewBox="0 0 24 24" style="width:1.1em;height:1.1em;"><use href="#i-leaf"/></svg> Del viñedo al escenario, con energía limpia</span>
         </div>
       </div>
     </div>
