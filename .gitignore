@@ -1,3 +1,7 @@
 .DS_Store
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+
+# Archivos pesados generados: no versionar (inflaban el historial a 189 MB)
+Claude outputs/*.pdf
+Claude outputs/*.zip
