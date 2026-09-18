@@ -12,7 +12,7 @@ Marca B2B independiente del sector de eventos, orientada a conexiones, alianzas,
 
 ## Fuente original
 
-Todo el material recibido —Markdown, HTML e imágenes— se conserva sin alterar en `Fuentes-originales/`.
+Todo el material recibido —Markdown, HTML e imágenes— se conserva sin alterar en `fuentes-originales/`.
 
 ## Regla de uso
 
@@ -20,7 +20,7 @@ Concertsost es independiente de Sabor a Música. No reutilizar su identidad, tex
 
 ## Punto de partida
 
-Leer `Fuentes-originales/Concertost/00_MASTER.md` y después `04_DECISIONS.md` para conocer las decisiones vigentes.
+Leer `fuentes-originales/concertsost/00_MASTER.md` y después `04_DECISIONS.md` para conocer las decisiones vigentes.
 
 ## Estado actual (15/09/2026)
 

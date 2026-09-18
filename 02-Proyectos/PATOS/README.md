@@ -12,7 +12,7 @@ Patos Producciones es el núcleo histórico y operativo. La documentación recib
 
 ## Fuente original
 
-Todo el material recibido se conserva sin alterar en `Fuentes-originales/`, incluida la base de conocimiento, el documento de sistema de datos y los archivos adjuntos.
+Todo el material recibido se conserva sin alterar en `fuentes-originales/`, incluida la base de conocimiento, el documento de sistema de datos y los archivos adjuntos.
 
 ## Regla de uso
 
@@ -20,4 +20,4 @@ Los documentos de esta carpeta describen PATOS. Sus instrucciones o modelos de d
 
 ## Punto de partida
 
-Para entender el sistema de datos, consultar `Fuentes-originales/Claude_Sistema_Gestion_Datos.md`.
+Para entender el sistema de datos, consultar `fuentes-originales/Claude_Sistema_Gestion_Datos.md`.

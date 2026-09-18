@@ -10,7 +10,8 @@ Usa [[../04-Plantillas/Proyecto|la plantilla de proyecto]] para empezar.
 
 ## Proyectos incorporados
 
-- [[PATOS/README|PATOS]]
-- [[Concertsost/README|Concertsost]]
-- [[Sabor-a-Musica/README|Sabor a Música]]
-- [[MARDOS/README|MARDOS]]
+- [[patos/README|PATOS]]
+- [[concertsost/README|Concertsost]]
+- [[sabor-a-musica/README|Sabor a Música]]
+- [[mardos/README|MARDOS]]
+- [[vinal-fest/README|VINAL FEST]]
